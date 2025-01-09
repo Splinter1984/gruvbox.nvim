@@ -33,6 +33,7 @@ describe("tests", function()
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
+      invert_search = false,
       contrast = "",
       palette_overrides = {},
       overrides = {},

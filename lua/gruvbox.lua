@@ -40,6 +40,7 @@ local Gruvbox = {}
 ---@field invert_signs boolean?
 ---@field invert_tabline boolean?
 ---@field invert_intend_guides boolean?
+---@field invert_search boolean?
 ---@field inverse boolean?
 ---@field overrides table<string, HighlightDefinition>?
 ---@field palette_overrides table<string, string>?
@@ -60,7 +61,8 @@ Gruvbox.config = {
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  inverse = true,
+  invert_search = false,
+  inverse = false,
   contrast = "",
   palette_overrides = {},
   overrides = {},
@@ -301,8 +303,8 @@ local function get_groups()
     SpecialKey = { link = "GruvboxFg4" },
     Visual = { bg = colors.bg3, reverse = config.invert_selection },
     VisualNOS = { link = "Visual" },
-    Search = { fg = colors.yellow, bg = colors.bg0, reverse = config.inverse },
-    IncSearch = { fg = colors.orange, bg = colors.bg0, reverse = config.inverse },
+    Search = { fg = colors.yellow, bg = colors.bg0, reverse = config.invert_search },
+    IncSearch = { fg = colors.orange, bg = colors.bg0, reverse = config.invert_search },
     CurSearch = { link = "IncSearch" },
     QuickFixLine = { link = "GruvboxPurple" },
     Underlined = { fg = colors.blue, underline = config.underline },
